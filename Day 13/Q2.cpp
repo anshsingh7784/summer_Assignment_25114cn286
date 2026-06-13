@@ -23,5 +23,6 @@ int main()
     }
     cout<<endl;
     cout<<"the sum of the array elements is: "<<sum<<endl;
+    cout<<"the average of the array elements is: "<<(double)sum/n<<endl;
     return 0;
 }
