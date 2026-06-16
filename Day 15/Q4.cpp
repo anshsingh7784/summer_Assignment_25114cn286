@@ -19,9 +19,10 @@ int main()
     for(int i=0;i<n;i++)
     {
         if(a[i]!=0)
-        {
-            a[nonzero++]=a[i];
-             a[i]=0;
+        { int temp=a[nonzero];
+            a[nonzero]=a[i];
+             a[i]=temp;
+             nonzero++;
         }
         
     }
