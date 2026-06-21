@@ -12,7 +12,10 @@ int main()
    for(int i=0;i<l;i++)
    {
     if(s[i]==32)
+    {
     s.erase(i,1);
+    i--;
+    }
    }
    cout<<"String without space :"<<s<<"\n";
     return 0;
