@@ -1,0 +1,52 @@
+#include<iostream>
+#include<string>
+#include<vector>
+#include<sstream>
+using namespace std;
+int main()
+{
+    cout<<"Enter a Sentence :";
+    string s;
+    getline(cin,s);
+    cout<<"Sentence :"<<s<<"\n";
+    
+    string news="";
+    stringstream ss(s);
+    string word="";
+    vector<string> words;
+    while(ss>>word)
+    {
+        words.push_back(word);
+    }
+    
+
+    int mini=0;
+    int size=words.size();
+    for(int i=0;i<size;i++)
+    {
+        mini=i;
+        for(int j=i+1;j<size;j++)
+        {
+            int a=words[j].length();
+            int b=words[mini].length();
+            if(a<b)
+            {
+                mini=j;
+            }
+          
+        }
+        if(mini!=i)
+        {
+            string t=words[i];
+            words[i]=words[mini];
+            words[mini]=t;
+        }
+    }
+    for(string x:words)
+    {
+        news+=x+" ";
+    }
+    cout<<"Sorted string by length :"<<news<<"\n";
+    return 0;
+
+}
